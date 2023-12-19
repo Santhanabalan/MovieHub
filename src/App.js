@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import CssBaseline from '@mui/material/CssBaseline';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Footer from "./Footer";
+import Navbar from "./Navbar";
+import Main from "./Main";
 
-function App() {
+// TODO remove, this demo shouldn't need to reset the theme.
+const defaultTheme = createTheme({
+  palette: {
+    primary: {
+      main: '#222831',
+    },
+    secondary: {
+      main: '#393E46',
+    },
+  },
+});
+
+export default function Album() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={defaultTheme}>
+      <CssBaseline />
+      <Navbar />
+      {/* Hero unit */}
+      <Main />
+      {/* Footer */}
+      <Footer />
+      {/* End footer */}
+    </ThemeProvider>
   );
 }
-
-export default App;
