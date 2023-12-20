@@ -7,7 +7,7 @@ import Container from '@mui/material/Container';
 import MovieCards from "./MovieCards";
 
 const OMDB_API_KEY = process.env.REACT_APP_OMDB_API_KEY;
-const OMDB_URL = `http://www.omdbapi.com/?apikey=${OMDB_API_KEY}`
+const OMDB_URL = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}`
 
 export default function Main() {
     const [loading, setLoading] = useState(false);
